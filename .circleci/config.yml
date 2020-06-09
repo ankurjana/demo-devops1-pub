@@ -5,6 +5,9 @@ orbs:
   cypress: cypress-io/cypress@1
   playground: fauxalgore/playground@0.0.2
 workflows:
-  build_push_test:
+  build_execute:
     jobs:
       - pantheon/push
+      - playground/backstop:
+        requires:
+          - pantheon/push

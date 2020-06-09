@@ -12,11 +12,11 @@ workflows:
           requires:
             - pantheon/push
       - cypress/run:
-        requires:
-          - pantheon/push
-        executor: cypress/browsers-chrome69
-        browser: chrome
-        store_artifacts: true
-        post-steps:
-          - store_test_results:
-              path: cypress/results
+          requires:
+            - pantheon/push
+          executor: cypress/browsers-chrome69
+          browser: chrome
+          store_artifacts: true
+          post-steps:
+            - store_test_results:
+                path: cypress/results

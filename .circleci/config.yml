@@ -9,5 +9,5 @@ workflows:
     jobs:
       - pantheon/push
       - playground/backstop:
-        requires:
-          - pantheon/push
+          requires:
+            - pantheon/push

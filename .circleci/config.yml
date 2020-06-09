@@ -6,7 +6,7 @@ orbs:
   playground: fauxalgore/playground@0.0.2
 workflows:
   build_push_test:
-    jobs:      
+    jobs:
       - pantheon/push
       - playground/backstop:
           requires:
@@ -52,7 +52,7 @@ workflows:
           location: sites/all/modules/custom
           requires:
             - pantheon/push
-jobs:  
+jobs:
   deploy_to_test:
     docker:
     - image: quay.io/pantheon-public/build-tools-ci:6.x

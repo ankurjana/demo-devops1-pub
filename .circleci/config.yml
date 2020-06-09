@@ -23,6 +23,8 @@ workflows:
       - approve_test_deploy:
           requires:
             - pantheon/push
+            - cypress/run
+            - playground/backstop
           type: approval
           filters:
             branches:

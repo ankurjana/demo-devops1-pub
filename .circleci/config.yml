@@ -8,9 +8,6 @@ workflows:
   build_execute:
     jobs:
       - pantheon/push
-      - playground/backstop:
-          requires:
-            - pantheon/push
       - cypress/run:
           requires:
             - pantheon/push

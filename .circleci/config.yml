@@ -39,7 +39,7 @@ workflows:
               only: "master"
       - deploy_to_live:
           requires:
-            - approve_test_env
+            - approve_live_deploy
           filters:
             branches:
               only: "master"

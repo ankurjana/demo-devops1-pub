@@ -28,8 +28,8 @@ workflows:
           requires:
             - approve_test_deploy
           filters:
-          branches:
-            only: "master"
+            branches:
+              only: "master"
 jobs:
   deploy_to_test:
     docker:

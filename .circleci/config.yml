@@ -7,51 +7,7 @@ orbs:
 workflows:
   build_push_test:
     jobs:
-      - pantheon/push
-      - playground/backstop:
-          requires:
-            - pantheon/push
-      - cypress/run:
-          requires:
-            - pantheon/push
-          executor: cypress/browsers-chrome69
-          browser: chrome
-          store_artifacts: true
-          post-steps:
-            - store_test_results:
-                path: cypress/results
-      - approve_dev_env:
-          requires:
-            - pantheon/push
-          type: approval
-          filters:
-            branches:
-              only: "master"
-      - deploy_to_test:
-          requires:
-          - approve_dev_env
-          filters:
-            branches:
-              only: "master"
-      - approve_test_env:
-          type: approval
-          requires:
-          - deploy_to_test
-          filters:
-            branches:
-              only: "master"
-      - deploy_to_live:
-          requires:
-          - approve_test_env
-          filters:
-            branches:
-              only: "master"
-      - ci-tools/phpcs-drupal:
-          extensions: 'module,inc,install,theme,css,info'
-          standards: 'Drupal,DrupalPractice'
-          location: sites/all/modules/custom
-          requires:
-            - pantheon/push
+      - pantheon/push      
 jobs:
   deploy_to_test:
     docker:

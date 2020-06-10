@@ -4,6 +4,6 @@ describe('Failed case', () => {
     cy.wait(1500)
     cy.visit(`https://www.fluke.com`);
     cy.wait(1500)
-    cy.get('h2').contains('This should fail');
+    cy.get('h2').contains('Fluke helps keep business and industry running in over 100 countries.');
   });
 });
